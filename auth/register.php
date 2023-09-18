@@ -2,9 +2,6 @@
 
 require_once '../server/database.php';
 
-if (!isset($_POST[''])){
-    exit;
-}
 
 
 $db = new Database();
