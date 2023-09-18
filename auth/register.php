@@ -2,6 +2,11 @@
 
 require_once '../server/database.php';
 
+if (!isset($_POST[''])){
+    exit;
+}
+
+
 $db = new Database();
 
 $db->query(" SELECT * FROM `users` WHERE `username` = :user");
@@ -26,6 +31,7 @@ $_SESSION['username'] = $_POST['username'];
 
 
 echo json_encode(["status" => "success", "message" => "User created"]);
+header( 'Location: ../index.php?page=dashboard' )
 
 
 

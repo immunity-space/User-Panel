@@ -2,6 +2,9 @@
 
 require_once '../server/database.php';
 
+
+
+
 $db = new Database();
 
 $db->query("SELECT * FROM users WHERE username = :user");
@@ -30,6 +33,6 @@ session_start();
 $_SESSION['username'] = $result['username'];
 $_SESSION['id'] = $result['id'];
 echo json_encode(["status" => "success", "message" => "Login successful"]);
-
+header( 'Location:../index.php?page=dashboard' )
 
 ?>
