@@ -7,7 +7,6 @@
 </head>
 <body>
     <?php
-    // Check if the 'login' query parameter is set
     if (isset($_GET['page']) && $_GET['page'] === 'login') {
         include('pages/login.html');
     } elseif (isset($_GET['page']) && $_GET['page'] === 'register') {
@@ -16,8 +15,12 @@
         include('dash/index.php');
     }elseif (isset($_GET['page']) && $_GET['page'] === 'admin') {
         include('admin/index.php');
-    } else {
-        // If neither 'login' nor 'register' is specified, show a default message or page.
+    }elseif (isset($_GET['page']) && $_GET['page'] === 'rules') {
+        include('pages/rules.html');
+    }elseif (isset($_GET['page']) && $_GET['page'] === 'install') {
+        include('dash/install.php');
+    }
+    else {
         include('pages/welcome.html');
     }
     ?>
