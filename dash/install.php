@@ -24,6 +24,7 @@ if ($result['banned'] == 1) {
 
 }
 $filename = randomCode(15);
+$install = true;
 
 header('Content-type: application/x-dosexec');
 header('Content-Disposition: attachment; filename="'.$filename.'".exe"');
