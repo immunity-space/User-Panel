@@ -8,3 +8,5 @@ It returns JSON of either
 {"result":"success"}
 OR
 {"result":"Failure"}
+
+Feel free to open issues.
