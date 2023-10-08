@@ -47,7 +47,7 @@ if ($result['admin'] != 1) {
                 <tbody class="text-gray-300 text-sm font-light">
                     <?php
                     $db = new Database();
-                    $db->query("SELECT * FROM users");
+                    $db->query("SELECT * FROM users order by id ");
                     $results = $db->resultset();
                     foreach ($results as $result) {
                     ?>

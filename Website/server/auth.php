@@ -3,9 +3,7 @@
 require_once 'database.php';
 require_once 'util.php';
 
-if (detect() == true) {
-    echo json_encode(['result' => 'failed']);
-}
+
 
 $db = new Database();
 
@@ -13,9 +11,12 @@ if (isset($_GET['type']) && $_GET['type'] === 'login') {
 
     $username = $_GET['username'];
     $password = $_GET['password'];
+    $hwid = $_GET['hwid'];
 
-    $db->query("SELECT * FROM users WHERE username = :username"); 
+    $db->query("SELECT * FROM users WHERE username = :username and hwid = :hwid"); 
     $db->bind(':username', $username);
+    $db->bind(':hwid', $hwid);
+
     $db->execute();
     $result = $db->single();
 
